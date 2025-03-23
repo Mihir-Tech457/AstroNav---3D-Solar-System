@@ -1,0 +1,198 @@
+body {
+  background: url('static/background.jpg') no-repeat center center fixed;
+  background-size: cover;
+  color: white;
+  font-family: 'Open Sans', sans-serif;
+  overflow-x: hidden;
+}
+
+.navbar {
+  margin-bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.navbar-brand, .nav-link {
+  color: #FFD700 !important;
+  transition: color 0.3s;
+}
+
+.navbar-brand:hover, .nav-link:hover {
+  color: #FFFFFF !important;
+}
+
+.welcome-section {
+  text-align: center;
+  margin-top: 50px;
+  padding: 40px;
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+}
+
+.welcome-section h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #FFD700;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.welcome-section p {
+  font-size: 1.5rem;
+  color: #FFFFFF;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.planet-card {
+  text-align: center;
+  margin-bottom: 20px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.planet-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.planet-card img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: transform 0.3s;
+}
+
+.planet-card img:hover {
+  transform: scale(1.1);
+}
+
+.planet-card h4 {
+  margin-top: 10px;
+  color: #FFD700;
+}
+
+.planet-card p {
+  color: #FFFFFF;
+}
+
+.btn-danger, .btn-primary {
+  border: none;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.btn-danger:hover, .btn-primary:hover {
+  transform: translateY(-5px);
+  background-color: #FF6347;
+}
+
+#universe {
+  position: relative;
+  z-index: 1;
+  margin-top: 50px;
+  animation: rotate 60s infinite linear;
+}
+
+.explore-text {
+  color: red; /* Match the button color */
+  font-weight: bold;
+  cursor: default; /* Remove pointer effect */
+}
+
+.explore-link {
+  color: yellow; /* Match previous button color */
+  font-weight: bold;
+  text-decoration: none; /* Remove underline */
+}
+
+.explore-link:hover {
+  text-decoration: underline; /* Underline on hover */
+}
+
+/* Flexbox container for centering the footer */
+.main-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* Full viewport height */
+}
+
+/* Footer Styles */
+.footer {
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+  width: 100%;
+  font-size: 1rem;
+  box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.3);
+  position: relative; /* Keeps it positioned within the flow */
+  margin: 50px 0; /* Creates spacing before and after */
+}
+
+.footer p {
+  margin: 0;
+  color: #FFD700;
+}
+
+.footer-nav {
+  list-style: none;
+  padding: 0;
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.footer-nav li {
+  margin: 0 15px;
+}
+
+.footer-nav a {
+  color: #FFD700;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-nav a:hover {
+  color: white;
+  text-decoration: underline;
+}
+
+.about-section {
+  margin-top: 50px;
+  padding: 40px 20px;
+  text-align: center;
+  color: white;
+}
+
+.about-img {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.3);
+}
+
+.about-section h2 {
+  color: #FFD700;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.about-section p {
+  font-size: 1.2rem;
+  text-align: left;
+}
+
+.footer {
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  text-align: center;
+  padding: 15px 0;
+  margin-top: 50px;
+}
+
+
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}

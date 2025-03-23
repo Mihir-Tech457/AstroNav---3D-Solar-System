@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AstroNav - 3D Solar System</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+
+
+    <style>
+        .navbar-brand img {
+            height: 50px;
+            margin-right: 10px;
+        }
+        .navbar-nav {
+            flex-grow: 1;
+        }
+        .ml-auto {
+            margin-left: auto !important;
+        }
+        .welcome-section {
+            text-align: center;
+            margin-top: 50px;
+        }
+        .welcome-section h1 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #FFD700;
+        }
+        .welcome-section p {
+            font-size: 1.2rem;
+            color: #FFFFFF;
+        }
+        .team-member img {
+    width: 150px; /* Set a fixed width */
+    height: 150px; /* Set a fixed height */
+    object-fit: cover; /* Ensures the image is cropped properly */
+    border-radius: 50%; /* Makes the images circular */
+    display: block;
+    margin: 10px auto; /* Centers images */
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2); /* Adds a subtle glow effect */
+    border: 3px solid #FFD700; /* Adds a golden border */
+}
+
+.team-member {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.team-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.about-section h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #FFD700;
+}
+.about-section {
+    text-align: center;
+    margin: 50px auto;
+    padding: 20px;
+    max-width: 1000px;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
+}
+
+.team-row {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.team-member {
+    text-align: center;
+    max-width: 450px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
+}
+
+.team-member img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%; /* Circular images */
+    border: 4px solid #FFD700; /* Gold border */
+    box-shadow: 0 4px 8px rgba(255, 215, 0, 0.3);
+    margin-bottom: 15px;
+}
+
+.team-member h3 {
+    color: #FFD700; /* Gold name text */
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+.team-member p {
+    color: white;
+    font-size: 1rem;
+    margin: 5px 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .team-row {
+        flex-direction: column;
+        align-items: center;
+    }
+    .team-member {
+        width: 90%;
+    }
+}
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.footer {
+    text-align: center;  /* Center the text */
+    background-color: rgba(0, 0, 0, 0.8);  /* Dark background */
+    color: white;  /* Text color */
+    padding: 15px 0;  /* Adds padding */
+    width: 100%;  /* Full width */
+    position: relative;  /* Ensure it stays at the bottom */
+    display: flex;  /* Use flexbox */
+    flex-direction: column;  /* Stack elements */
+    align-items: center;  /* Center items horizontally */
+    justify-content: center;  /* Center content */
+}
+
+.footer p {
+    margin: 0 auto;  /* Center-align paragraph */
+    font-size: 1rem;  /* Maintain readable font size */
+    width: 100%;  /* Ensure it takes full width */
+    text-align: center;  /* Explicitly center text */
+}
+    body {
+        background: radial-gradient(circle, #000014 30%, #000000 80%);
+        color: white;
+    }
+    body {
+        background: url('static/background.jpg') no-repeat center center fixed;
+        background-size: cover;
+        color: white;
+    }
+</style>
+
+</style>
+
+    </style>
+</head>
+<body class="opening hide-UI view-2D zoom-large data-close controls-close">
+
+    <!-- Navbar -->
+    
+    <!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="{{ url_for('home') }}">
+        <img src="{{ url_for('static', filename='Blue_and_Red_Abstract_Fast_Rocket_Logo-removebg-preview.png') }}" alt="Solar System Logo" width="60" height="60">
+        <strong>AstroNav</strong>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+        </ul>
+        
+        <!-- Chatbot Button -->
+        <form class="form-inline ml-auto">
+            <a href="chatbot.html" class="btn btn-warning">AI Chatbot</a>
+        </form>
+    </div>
+</nav>
+<!-- About Us Section -->
+    <div class="about-section">
+        <h1>Meet Our Team</h1>
+        <div class="team-row">
+            <div class="team-member">
+                <img src="{{ url_for('static', filename='images/aryan.jpg') }}" alt="Aryan Suthar">
+                <h3>Suthar Aryan</h3>
+                <h4>Team Leader | Backend Developer</h4>
+                <p>Aryan Suthar is the mastermind behind the backend architecture of the AstroNav project. He has meticulously designed and implemented the server-side logic, ensuring seamless integration with the AI and chatbot functionalities. Aryan's expertise in backend development has been pivotal in creating a robust and scalable system that handles real-time data processing and user interactions efficiently. His work on the AI components has enabled intelligent responses and personalized user experiences, making the AstroNav platform both innovative and user-friendly.</p>
+                <p>College: ITM SLS Baroda University<br>
+                Course: B.Tech(IT-D2D)<br>
+                Mobile: 9712030021<br>
+                Email: aryan.suthar@itmbu.ac.in</p>
+            </div>
+            <div class="team-member">
+                <img src="{{ url_for('static', filename='images/Mihir.jpg') }}" alt="Mihir">
+                <h3>Chauhan MihirKumar Hiteshbhai</h3>
+                <h4>Frontend Developer | UI Designer</h4>
+                <p>Chauhan Mihirkumar Hiteshbhai has played a pivotal role in shaping the front-end design of the AstroNav project. His expertise in crafting intuitive and visually appealing user interfaces has significantly enhanced user engagement. With a keen eye for detail and a strong sense of design aesthetics, Mihir has ensured that the website is both functional and visually captivating. His contributions include implementing responsive design for seamless accessibility across all devices and integrating interactive elements that elevate the AstroNav experience.</p>
+                <p>College: ITM SLS Baroda University<br>
+                Course: B.Tech(IT)<br>
+                Mobile: 8735079647<br>
+                Email: chauhanmihir083@gmail.com</p>
+            </div>
+        </div>
+        <div class="team-row">
+            <div class="team-member">
+                <img src="{{ url_for('static', filename='images/jayhalol.jpg') }}" alt="Prajapati Jay">
+                <h3>Prajapati Jay</h3>
+                <h4>Content & Research</h4>
+                <p>Prajapati Jay is responsible for resource gathering and PPT creation for the AstroNav project. His efforts in compiling and organizing the necessary materials have been crucial in presenting the project's vision and progress effectively.</p>
+                <p>College: ITM SLS Baroda University<br>
+                Course: B.Tech(IT)<br>
+                Mobile: 9313417042<br>
+                Email: prajapatijay2445@gmail.com</p>
+            </div>
+            
+            <div class="team-member">
+                <img src="{{ url_for('static', filename='images/vikas.jpg') }}" alt="Solanki Vikas">
+                <h3>Solanki Vikas</h3>
+                <h4>Content & Research</h4>
+                <p>Solanki Vikas plays a key role in collecting resources and preparing presentations for the AstroNav project. His dedication to gathering and structuring essential materials has been instrumental in effectively conveying the project's vision and progress.</p>
+                <p>College: ITM SLS Baroda University<br>
+                Course: B.Tech(IT)<br>
+                Mobile: 9313061002<br>
+                Email: vikassolanki2802@gmail.com</p>
+            </div>
+        </div>
+        
+        
+        
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2050 AstroNav. All rights reserved.</p>
+        <ul class="footer-nav">
+            <li><a href="#privacy">Privacy Policy</a></li>
+            <li><a href="#terms">Terms of Service</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+        </ul>
+    </footer>
+</body>
+</html>

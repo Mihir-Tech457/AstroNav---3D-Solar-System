@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AstroNav - 3D Solar System</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+
+
+    <style>
+        .navbar-brand img {
+            height: 50px;
+            margin-right: 10px;
+        }
+        .navbar-nav {
+            flex-grow: 1;
+        }
+        .ml-auto {
+            margin-left: auto !important;
+        }
+        .welcome-section {
+            text-align: center;
+            margin-top: 50px;
+        }
+        .welcome-section h1 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #FFD700;
+        }
+        .welcome-section p {
+            font-size: 1.2rem;
+            color: #FFFFFF;
+        }
+    body {
+        background: radial-gradient(circle, #000014 30%, #000000 80%);
+        color: white;
+    }
+    body {
+        background: url('static/background.jpg') no-repeat center center fixed;
+        background-size: cover;
+        color: white;
+    }
+</style>
+
+</style>
+
+    </style>
+</head>
+<body class="opening hide-UI view-2D zoom-large data-close controls-close">
+
+    <!-- Navbar -->
+    
+    <!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="{{ url_for('home') }}">
+        <img src="{{ url_for('static', filename='Blue_and_Red_Abstract_Fast_Rocket_Logo-removebg-preview.png') }}" alt="Solar System Logo" width="60" height="60">
+        <strong>AstroNav</strong>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+        </ul>
+        
+        <!-- Chatbot Button -->
+        <form class="form-inline ml-auto">
+            <a href="chatbot.html" class="btn btn-warning">AI Chatbot</a>
+        </form>
+    </div>
+</nav>
+
+
+    <!-- Welcome Section -->
+    <div class="container text-center mt-5">
+        <div class="welcome-section">
+            <h1>🚀 Welcome to AstroNav!</h1>
+            <p>
+                Explore the vast wonders of our <strong>Solar System</strong> with AstroNav! Navigate through the cosmos,
+                discover fascinating celestial bodies, and interact with our <strong>AI Chatbot</strong> for all your astronomy-related questions.
+            </p>
+            <p>✨ Whether you're a space enthusiast or a curious explorer, AstroNav is your gateway to the <strong>universe</strong>.</p>
+            <a href="chatbot.html" class="btn btn-primary btn-lg">Start Exploring</a>
+        </div>
+    </div>
+
+    <div class="container text-center mt-5">
+        <div class="welcome-section">
+            <!-- Space Navigation Section -->
+<div class="navigation-section">
+    <h2>Space Navigation Systems: Charting the Cosmos</h2>
+    <p>Navigating through space requires precise calculations, cutting-edge technology, and a deep understanding of celestial mechanics. Unlike Earth-bound travel, space navigation operates in a vacuum where conventional GPS systems are ineffective. Instead, space missions rely on <strong>celestial navigation, star trackers, onboard sensors, and AI-driven algorithms</strong> to determine a spacecraft's position, velocity, and trajectory in real-time.</p>
+
+    <h3>Key Technologies in Space Navigation:</h3>
+    <ul>
+        <li><strong>Inertial Navigation Systems (INS):</strong> Uses gyroscopes and accelerometers to measure motion and maintain orientation.</li>
+        <li><strong>Celestial Navigation:</strong> Utilizes the positions of stars and pulsars as fixed reference points for determining location.</li>
+        <li><strong>Deep Space Network (DSN):</strong> A global network of radio antennas that communicate with interplanetary missions and provide precise tracking data.</li>
+        <li><strong>AI and Machine Learning:</strong> Enhances autonomous navigation, allowing spacecraft to adjust their trajectory based on real-time observations.</li>
+        <li><strong>Optical Navigation:</strong> Uses high-resolution cameras to analyze celestial bodies and determine precise positioning.</li>
+    </ul>
+
+    <h3>Challenges in Space Navigation:</h3>
+    <ul>
+        <li><strong>Gravitational Influences:</strong> Objects in space are constantly affected by the gravity of planets, moons, and even distant stars, requiring continuous trajectory adjustments.</li>
+        <li><strong>Signal Delays:</strong> Communication with Earth takes minutes to hours, making real-time remote control impractical for deep-space missions.</li>
+        <li><strong>Cosmic Hazards:</strong> Spacecraft must avoid debris, radiation belts, and unpredictable cosmic phenomena while staying on course.</li>
+    </ul>
+
+    <h3>Future of Space Navigation:</h3>
+    <p>With advancements in <strong>quantum sensors, interplanetary internet, and AI-driven autonomous spacecraft</strong>, future missions will navigate with even greater precision. Upcoming technologies like <strong>X-ray pulsar-based navigation (XNAV)</strong> and <strong>laser-based positioning systems</strong> could revolutionize deep-space travel, enabling humanity's journey to Mars, asteroids, and beyond.</p>
+        </div>
+        </div>
+    </div>
+    
+
+    
+    <!-- 3D Solar System -->
+    <div id="universe" class="scale-stretched">
+        <div id="galaxy">
+            <div id="solar-system" class="earth">
+                <div id="sun"></div>
+                <div id="mercury" class="orbit"><div class="pos"><div class="planet"></div></div></div>
+                <div id="venus" class="orbit"><div class="pos"><div class="planet"></div></div></div>
+                <div id="earth" class="orbit"><div class="pos"><div class="planet"></div></div></div>
+                <div id="mars" class="orbit"><div class="pos"><div class="planet"></div></div></div>
+                <div id="jupiter" class="orbit"><div class="pos"><div class="planet"></div></div></div>
+                <div id="saturn" class="orbit"><div class="pos"><div class="planet"><div class="ring"></div></div></div></div>
+                <div id="uranus" class="orbit"><div class="pos"><div class="planet"></div></div></div>
+                <div id="neptune" class="orbit"><div class="pos"><div class="planet"></div></div></div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <h1 class="text-center">Inner Planets</h1>
+        <p class="text-center">The first four planets from the Sun are Mercury, Venus, Earth, and Mars. These inner planets also are known as terrestrial planets because they have solid surfaces.</p>
+        
+        <div class="row">
+            <div class="col-md-3 planet-card">
+                <img src="{{ url_for('static', filename='images/mercury-removebg-preview.png') }}" alt="Mercury">
+                <h4>Mercury Facts</h4>
+                <p>Mercury is the planet nearest to the Sun, and the smallest planet in our solar system.</p>
+                <a href="https://science.nasa.gov/mercury/facts/" class="btn btn-primary btn-lg" target="_blank">Start Exploring</a>
+
+
+            </div>
+            <div class="col-md-3 planet-card">
+                <img src="{{ url_for('static', filename='images/venus-removebg-preview.png') }}" alt="Mercury">
+
+                <h4>Venus Facts</h4>
+                <p>Venus is a rocky planet similar in size and mass to Earth. It's the second planet from the sun.                              
+                </p>
+
+
+                <a href="https://science.nasa.gov/venus/venus-facts/" class="btn btn-primary btn-lg" target="_blank">Start Exploring</a>
+            </div>
+            <div class="col-md-3 planet-card">
+                <img src="{{ url_for('static', filename='images/earth-removebg-preview.png') }}" alt="Earth">
+                <h4>Earth Facts</h4>
+                <p>Earth - our home planet - is the third planet from the Sun, and the fifth largest planet.</p>
+                <a href="https://science.nasa.gov/earth/facts/" class="btn btn-primary btn-lg" target="_blank">Start Exploring</a>
+            </div>
+            <div class="col-md-3 planet-card">
+                <img src="{{ url_for('static', filename='images/mars-removebg-preview.png') }}" alt="Mars">
+                <h4>Mars Facts</h4>
+                <p>Mars is the fourth planet from the Sun, and the seventh largest planet.</p>
+                <a href="https://science.nasa.gov/mars/facts/" class="btn btn-primary btn-lg" target="_blank">Start Exploring</a>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <h1 class="text-center">Outer Planets</h1>
+        <p class="text-center">The giant planets in the outer solar system don't have hard surfaces. Instead, they have swirling gases above a core. Jupiter and Saturn are gas giants. Uranus and Neptune are ice giants.</p>
+        
+        <div class="row">
+            <div class="col-md-3 planet-card">
+                <img src="{{ url_for('static', filename='images/jupiter-removebg-preview.png') }}" alt="Jupiter">
+                <h4>Jupiter Facts</h4>
+                <p>Jupiter is the fifth planet from the Sun, and the largest planet in our solar system..</p>
+                <a href="https://science.nasa.gov/jupiter/jupiter-facts/" class="btn btn-primary btn-lg" target="_blank">Start Exploring</a>
+
+            </div>
+            <div class="col-md-3 planet-card">
+                <img src="{{ url_for('static', filename='images/saturn-removebg-preview.png') }}" alt="Saturn">
+
+                <h4>Saturn Facts</h4>
+                <p>Saturn is the sixth planet from the Sun, the second largest planet in our solar system..                              
+                </p>
+
+
+                <a href="https://science.nasa.gov/saturn/facts/" class="btn btn-primary btn-lg" target="_blank">Start Exploring</a>
+            </div>
+            <div class="col-md-3 planet-card">
+                <img src="{{ url_for('static', filename='images/uranus-removebg-preview.png') }}" alt="Uranus">
+                <h4>Uranus Facts</h4>
+                <p>Uranus is the seventh planet from the Sun, and the third largest planet in our solar system.</p>
+                <a href="https://science.nasa.gov/uranus/facts/" class="btn btn-primary btn-lg" target="_blank">Start Exploring</a>
+            </div>
+            <div class="col-md-3 planet-card">
+                <img src="{{ url_for('static', filename='images/nepturn-removebg-preview.png') }}" alt="Neptune">
+                <h4>Neptune Facts</h4>
+                <p>Neptune is the eighth and most distant planet in our solar system. It's the fourth largest planet.</p>
+                <a href="https://science.nasa.gov/neptune/neptune-facts/" class="btn btn-primary btn-lg" target="_blank">Start Exploring</a>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <h1 class="text-center">Dwarf Planets</h1>
+        <p class="text-center">Dwarf planets include longtime favorite Pluto, Ceres, Makemake, Haumea, and Eris. Ceres is the only dwarf planet in the inner solar system. It's in the main asteroid belt between Mars and Jupiter.</p>
+        
+        <div class="row">
+            <div class="col-md-3 planet-card">
+                <img src="{{ url_for('static', filename='images/ceres-removebg-preview.png') }}" alt="Ceres">
+                <h4>Ceres Facts</h4>
+                <p>Dwarf planet Ceres is the largest object in the asteroid belt between Mars and Jupiter, and it's the only dwarf planet in the inner solar system.</p>
+                <a href="https://science.nasa.gov/dwarf-planets/ceres/facts/" class="btn btn-primary btn-lg" target="_blank">Start Exploring</a>
+
+            </div>
+            <div class="col-md-3 planet-card">
+                <img src="{{ url_for('static', filename='images/pluto-removebg-preview.png') }}" alt="Pluto">
+
+                <h4>Pluto Facts</h4>
+                <p>Pluto was long considered our solar system's ninth planet. It was reclassified as a dwarf planet in 2006 by the International Astronomical Union.                              
+                </p>
+
+
+                <a href="https://science.nasa.gov/dwarf-planets/pluto/facts/" class="btn btn-primary btn-lg" target="_blank">Start Exploring</a>
+            </div>
+            <div class="col-md-3 planet-card">
+                <img src="{{ url_for('static', filename='images/haumea-removebg-preview.png') }}" alt="Haumea">
+                <h4>Haumea Facts</h4>
+                <p>Haumea was nicknamed Santa by one discovery team. It is oval-shaped, and is one of the fastest rotating large objects in our solar system.</p>
+                <a href="https://science.nasa.gov/dwarf-planets/haumea/" class="btn btn-primary btn-lg" target="_blank">Start Exploring</a>
+            </div>
+            <div class="col-md-3 planet-card">
+                <img src="{{ url_for('static', filename='images/eris-removebg-preview.png') }}" alt="Eris">
+                <h4>Eris Facts</h4>
+                <p>Eris is the most massive and second-largest known dwarf planet in the Solar System. It is a trans-Neptunian object in the scattered disk </p>
+                <a href="https://science.nasa.gov/dwarf-planets/eris/" class="btn btn-primary btn-lg" target="_blank">Start Exploring</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+<footer class="footer">
+    <p>&copy; 2050 AstroNav. All rights reserved.</p>
+    <ul class="footer-nav">
+        <li><a href="#privacy">Privacy Policy</a></li>
+        <li><a href="#terms">Terms of Service</a></li>
+        <li><a href="#contact">Contact Us</a></li>
+    </ul>
+</footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/scripts.min.js"></script>
+    <script src="./script.js"></script>
+</body>
+</html>
